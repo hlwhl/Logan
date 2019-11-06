@@ -158,7 +158,7 @@ void clogan_zlib_end_compress(cLogan_model *model) {
     (void) deflateEnd(model->strm);
     int val = 16 - model->remain_data_len;
     char data[16];
-    memset(data, val, 16);
+    memset(data, 0, 16);
     if (model->remain_data_len) {
         memcpy(data, model->remain_data, model->remain_data_len);
     }
